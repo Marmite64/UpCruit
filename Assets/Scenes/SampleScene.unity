@@ -4036,7 +4036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &485374503
 Transform:
   m_ObjectHideFlags: 0
@@ -4093,7 +4093,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 061b1947671ebff4cb50d8e60b4477cc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5896226, g: 1, b: 0.6634906, a: 0.46666667}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4180,7 +4180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 0.9, z: -8.6639}
+  m_LocalPosition: {x: -36.4, y: -8.5, z: -8.6639}
   m_LocalScale: {x: 0.50798, y: 0.50798, z: 0.50798}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6020,7 +6020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelectionBox: {fileID: 485374502}
-  Troop: {fileID: 0}
+  Troop: {fileID: 338437832912000489, guid: 49089829496eeab41864e8c7d0c86936, type: 3}
 --- !u!1 &1306050657
 GameObject:
   m_ObjectHideFlags: 0
@@ -6320,7 +6320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374305748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.89, y: 4.64, z: 0}
+  m_LocalPosition: {x: -1.03, y: -1.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -25,9 +25,14 @@ public class MouseScript : MonoBehaviour
         //TESTING
         if (Input.GetKeyDown("p"))
         {
-            transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 1);
+            /*transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 1);
             GameObject newTroop = Instantiate(Troop, transform);
-            newTroop.GetComponent<TroopScript>().SelectionBox = SelectionBox;
+            newTroop.GetComponent<TroopScript>().SelectionBox = SelectionBox;*/
+
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = 2.0f;
+            Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
+            Instantiate(Troop, objectPos, Quaternion.identity);
         }
     }
 }
