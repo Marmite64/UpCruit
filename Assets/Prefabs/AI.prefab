@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338437831009771570}
-  - component: {fileID: 338437831009771564}
   - component: {fileID: 338437831009771571}
   m_Layer: 0
   m_Name: Color
@@ -32,22 +31,6 @@ Transform:
   m_Father: {fileID: 338437832912000485}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &338437831009771564
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338437831009771569}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.36
 --- !u!212 &338437831009771571
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109,7 +92,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338437831083167233}
-  - component: {fileID: 338437831083167235}
   - component: {fileID: 338437831083167234}
   m_Layer: 0
   m_Name: Weapon
@@ -132,22 +114,6 @@ Transform:
   m_Father: {fileID: 338437832912000485}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &338437831083167235
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338437831083167232}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.36
 --- !u!212 &338437831083167234
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -209,7 +175,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338437832336540112}
-  - component: {fileID: 338437832336540115}
   - component: {fileID: 338437832336540119}
   m_Layer: 0
   m_Name: Head
@@ -232,22 +197,6 @@ Transform:
   m_Father: {fileID: 338437832912000485}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &338437832336540115
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338437832336540118}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.36
 --- !u!212 &338437832336540119
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -288,7 +237,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: fa76c4b335798354f855ca951fcccbe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -309,7 +258,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338437832592311256}
-  - component: {fileID: 338437832592311258}
   - component: {fileID: 338437832592311257}
   m_Layer: 0
   m_Name: Armor
@@ -332,22 +280,6 @@ Transform:
   m_Father: {fileID: 338437832912000485}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &338437832592311258
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338437832592311263}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.36
 --- !u!212 &338437832592311257
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -409,7 +341,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338437832673482363}
-  - component: {fileID: 338437832673482357}
   - component: {fileID: 338437832673482356}
   - component: {fileID: 338437832673482358}
   m_Layer: 0
@@ -433,22 +364,6 @@ Transform:
   m_Father: {fileID: 338437832912000485}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &338437832673482357
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338437832673482362}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.36
 --- !u!212 &338437832673482356
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -12,10 +12,11 @@ public class TroopScript : MonoBehaviour
     {
         Highlit.SetActive(false);
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other == SelectionBox)
+        if (collision.rigidbody == SelectionBox.GetComponent<Rigidbody2D>())
         {
+            Debug.Log("Collision");
             Highlit.SetActive(true);
         }
     }

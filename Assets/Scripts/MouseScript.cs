@@ -5,6 +5,7 @@ using UnityEngine;
 public class MouseScript : MonoBehaviour
 {
     public GameObject SelectionBox;
+    public GameObject Troop;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -19,5 +20,14 @@ public class MouseScript : MonoBehaviour
         }
         else SelectionBox.SetActive(false);
 
+
+
+        //TESTING
+        if (Input.GetKeyDown("p"))
+        {
+            transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 1);
+            GameObject newTroop = Instantiate(Troop, transform);
+            newTroop.GetComponent<TroopScript>().SelectionBox = SelectionBox;
+        }
     }
 }
