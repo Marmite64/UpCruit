@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,14 +9,11 @@ public class UnitController : MonoBehaviour
     [SerializeField] private GameObject target;
     [SerializeField] private LayerMask terrain;
 
-    NavMeshAgent agent;
+    AIPath agent;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-
+        agent = GetComponent<AIPath>();
         agent.destination = target.transform.position;        
     }
 
