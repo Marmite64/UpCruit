@@ -8,7 +8,7 @@ public class SelectionScript : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<TroopScript>() != null)
         {
-            collision.gameObject.GetComponent<TroopScript>().Highlit.SetActive(true);
+            collision.gameObject.GetComponent<TroopScript>().Highlight.SetActive(true);
             Data.SelectedUnits.Add(collision.gameObject);
         }
     }
@@ -16,7 +16,7 @@ public class SelectionScript : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<TroopScript>() != null && Input.GetMouseButton(0))
         {
-            collision.gameObject.GetComponent<TroopScript>().Highlit.SetActive(false);
+            collision.gameObject.GetComponent<TroopScript>().Highlight.SetActive(false);
             Data.SelectedUnits.Remove(collision.gameObject);
         }
     }

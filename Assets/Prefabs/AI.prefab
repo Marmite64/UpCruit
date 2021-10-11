@@ -448,7 +448,6 @@ GameObject:
   - component: {fileID: 7383698435751779724}
   - component: {fileID: 8275725565549554759}
   - component: {fileID: 5804470035781317068}
-  - component: {fileID: 7760831344531948627}
   - component: {fileID: 5640223724792813335}
   m_Layer: 0
   m_Name: AI
@@ -465,8 +464,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338437832912000489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.727, y: -2.228, z: -8.7542}
-  m_LocalScale: {x: 0.6760706, y: 0.6760706, z: 0.6760706}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8096936477127494396}
   - {fileID: 338437832336540112}
@@ -490,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 100
-  Highlit: {fileID: 4591442318233978950}
+  Highlight: {fileID: 4591442318233978950}
 --- !u!58 &7383698435751779724
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -562,7 +561,7 @@ MonoBehaviour:
   orientation: 1
   enableRotation: 1
   targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
+  maxAcceleration: 10
   rotationSpeed: 360
   slowdownDistance: 0.4
   pickNextWaypointDist: 0.4
@@ -571,20 +570,6 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
---- !u!114 &7760831344531948627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338437832912000489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  target: {fileID: 0}
 --- !u!50 &5640223724792813335
 Rigidbody2D:
   serializedVersion: 4

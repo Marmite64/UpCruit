@@ -20,7 +20,7 @@ public class MouseScript : MonoBehaviour
             SelectionBox.SetActive(true);
             for (int i = 0; i < Data.SelectedUnits.Count; i++)
             {
-                Data.SelectedUnits[i].GetComponent<TroopScript>().Highlit.SetActive(false);
+                Data.SelectedUnits[i].GetComponent<TroopScript>().Highlight.SetActive(false);
             }
             Data.SelectedUnits = new List<GameObject>();
             SelectionBox.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -61,8 +61,7 @@ public class MouseScript : MonoBehaviour
             {
                 Vector3 Target = FormationArrow.transform.position + FormationArrow.transform.up * FormationDistance * ((i % Columns) + 0.5f - Columns / 2);
                 Target += FormationArrow.transform.right * -Mathf.Floor(i / Columns);
-                Data.SelectedUnits[i].GetComponent<AIDestinationSetter>().target = Instantiate(FormationArrow.transform);
-                Data.SelectedUnits[i].GetComponent<AIDestinationSetter>().target.position = Target;
+                Data.SelectedUnits[i].GetComponent<TroopScript>().setDestination(Target);
             }
         }
 
