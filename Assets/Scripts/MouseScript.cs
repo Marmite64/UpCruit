@@ -5,11 +5,20 @@ using UnityEngine;
 
 public class MouseScript : MonoBehaviour
 {
-    public GameObject SelectionBox;
-    public GameObject FormationArrow;
-    public GameObject Troop;
-    public float FormationDistance = 1;
-    public float Columns;
+    [Header("General")]
+    [SerializeField] private float FormationDistance = 1;
+    [SerializeField] private float Columns;
+    [SerializeField] private LayerMask layerMask;
+
+    [Header("References")]
+    [SerializeField] private GameObject SelectionBox;
+    [SerializeField] private GameObject FormationArrow;
+    
+    [Header("Testing")]
+    [SerializeField] private GameObject Troop;
+    [SerializeField] private Faction playerFaction;
+    [SerializeField] private Faction enemyFaction;
+
     void Update()
     {
         # region MouseInput
@@ -17,12 +26,16 @@ public class MouseScript : MonoBehaviour
         // LeftClick
         if (Input.GetMouseButtonDown(0))
         {
+            Data.DeselectAll();
+
+            // Single select
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 10, layerMask);
+
+            TroopScript t;
+            if (hit.collider != null && (t = hit.collider.gameObject.GetComponent<TroopScript>()) && t.isPlayerControlled) t.selectUnit();
+
+            // Multi select - Draw selection box
             SelectionBox.SetActive(true);
-            for (int i = 0; i < Data.SelectedUnits.Count; i++)
-            {
-                Data.SelectedUnits[i].GetComponent<TroopScript>().Highlight.SetActive(false);
-            }
-            Data.SelectedUnits = new List<GameObject>();
             SelectionBox.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             SelectionBox.transform.position = new Vector3(SelectionBox.transform.position.x, SelectionBox.transform.position.y, 0);
         }
@@ -30,8 +43,14 @@ public class MouseScript : MonoBehaviour
         {
             SelectionBox.transform.localScale = Camera.main.ScreenToWorldPoint(Input.mousePosition) - SelectionBox.transform.position;
         }
-        else SelectionBox.SetActive(false);
-
+        if (Input.GetMouseButtonUp(0))
+        {
+            SelectionBox.SetActive(false);
+            foreach (GameObject t in Data.SelectedUnits) 
+            {
+                t.GetComponent<TroopScript>().isSelected = true;
+            }
+        }
 
         // RightClick
         if (Input.GetMouseButtonDown(1))
@@ -69,16 +88,21 @@ public class MouseScript : MonoBehaviour
 
 
         //TESTING
-        if (Input.GetKeyDown("p"))
+        if (Input.GetKeyDown("1") || Input.GetKey("1"))
         {
-            /*transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 1);
-            GameObject newTroop = Instantiate(Troop, transform);
-            newTroop.GetComponent<TroopScript>().SelectionBox = SelectionBox;*/
-
             Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 2.0f;
             Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
-            Instantiate(Troop, objectPos, Quaternion.identity);
+            objectPos.z = 0f;
+            GameObject g = Instantiate(Troop, objectPos, Quaternion.identity);
+            g.GetComponent<TroopScript>().unitFaction = playerFaction;
+        }
+        if (Input.GetKeyDown("2") || Input.GetKey("2"))
+        {
+            Vector3 mousePos = Input.mousePosition;
+            Vector3 objectPos = Camera.main.ScreenToWorldPoint(mousePos);
+            objectPos.z = 0f;
+            GameObject g = Instantiate(Troop, objectPos, Quaternion.identity);
+            g.GetComponent<TroopScript>().unitFaction = enemyFaction;
         }
     }
 }

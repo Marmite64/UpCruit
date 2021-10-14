@@ -6,19 +6,15 @@ public class SelectionScript : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<TroopScript>() != null)
-        {
-            collision.gameObject.GetComponent<TroopScript>().Highlight.SetActive(true);
-            Data.SelectedUnits.Add(collision.gameObject);
-        }
+        // Condition: Object has to be of type Unit
+        TroopScript t;
+        if ((t = collision.gameObject.GetComponent<TroopScript>()) && t.isPlayerControlled) t.selectUnit();
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<TroopScript>() != null && Input.GetMouseButton(0))
-        {
-            collision.gameObject.GetComponent<TroopScript>().Highlight.SetActive(false);
-            Data.SelectedUnits.Remove(collision.gameObject);
-        }
+        // Condition: Object has to be of type Unit, not selected and RMB must be pressed
+        TroopScript t;
+        if ((t = collision.gameObject.GetComponent<TroopScript>()) && !t.isSelected && Input.GetMouseButton(0)) t.deselectUnit();
     }
 
 }

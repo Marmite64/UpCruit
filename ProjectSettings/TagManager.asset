@@ -14,7 +14,7 @@ TagManager:
   - 
   - Terrain
   - Obstacles
-  - 
+  - Units
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Unit
+    uniqueID: 2963792457
     locked: 0
   - name: UI
     uniqueID: 651002149
