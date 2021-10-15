@@ -20,7 +20,7 @@ public class TroopScript : MonoBehaviour
     public bool isPlayerControlled = false;
 
     private IAstarAI ai;
-    private Animator[] animatorList;
+    private Animator animator;
 
     #endregion
 
@@ -29,20 +29,14 @@ public class TroopScript : MonoBehaviour
     void Start()
     {
         ai = GetComponent<IAstarAI>();
-        animatorList = GetComponentsInChildren<Animator>();
+        animator = GetComponent<Animator>();
         foreach (SpriteRenderer s in factionSprites) s.color = unitFaction.factionColor;
         isPlayerControlled = unitFaction.playerControlled;
     }
 
     void Update()
     {
-        if (ai.reachedDestination)
-        {
-            foreach (Animator a in animatorList)
-            {
-                a.SetBool("isWalking", false);
-            }
-        }
+        if (ai.reachedDestination) animator.SetBool("isWalking", false);
     }
     #endregion
 
@@ -53,10 +47,7 @@ public class TroopScript : MonoBehaviour
         ai.destination = pos;
 
         // Animation
-        foreach (Animator a in animatorList)
-        {
-            a.SetBool("isWalking", true);
-        }
+        animator.SetBool("isWalking", true);
     }
 
     public void selectUnit()
